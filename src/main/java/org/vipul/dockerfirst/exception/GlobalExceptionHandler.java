@@ -19,4 +19,10 @@ public class GlobalExceptionHandler {
             .body(errorResponse);
 
     }
+
+    @ExceptionHandler(NameNotFoundException.class)
+    public ResponseEntity<ErrorResponse> nameNotFoundException(NameNotFoundException ex){
+        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND.value(), java.time.LocalDateTime.now());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
 }

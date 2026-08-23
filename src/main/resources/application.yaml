@@ -19,3 +19,7 @@ server:
 app:
   file:
     path: ./names.txt
+
+springdoc:
+  swagger-ui:
+     path: /swagger

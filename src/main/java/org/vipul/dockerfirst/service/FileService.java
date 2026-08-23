@@ -1,8 +1,9 @@
-package org.vipul.dockerfirst;
+package org.vipul.dockerfirst.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.vipul.dockerfirst.exception.FileStorageException;
+import org.vipul.dockerfirst.exception.NameNotFoundException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -52,7 +53,7 @@ public class FileService {
             List<String> names = Files.readAllLines(path);
             boolean isExist = names.stream().anyMatch(n -> n.equalsIgnoreCase(name));
             if(!isExist){
-                throw new FileStorageException(String.format("Name '%s' does not exist in file.", name));
+                throw new NameNotFoundException(String.format("Name '%s' does not exist in file.", name));
             }
             names.remove(name);
             Files.write(path, names, StandardOpenOption.TRUNCATE_EXISTING);
