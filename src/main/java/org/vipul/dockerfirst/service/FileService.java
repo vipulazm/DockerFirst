@@ -51,11 +51,11 @@ public class FileService {
                 throw new FileStorageException(String.format("File '%s' does not exist.", filePath));
             }
             List<String> names = Files.readAllLines(path);
-            boolean isExist = names.stream().anyMatch(n -> n.equalsIgnoreCase(name));
+            boolean isExist = names.removeIf(n -> n.equalsIgnoreCase(name));
             if(!isExist){
                 throw new NameNotFoundException(String.format("Name '%s' does not exist in file.", name));
             }
-            names.remove(name);
+
             Files.write(path, names, StandardOpenOption.TRUNCATE_EXISTING);
             return name.concat(" : deleted successfully");
 
