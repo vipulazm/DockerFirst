@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Data Transfer Object for file operations")
-public class FileDto {
+@Schema(name = "UserDto", description = "Data Transfer Object for user information")
+public class UserDto {
 
-    @Schema(description = "The name of the file")
+    @Schema(description = "The name of the user")
     private String name;
 
+    @Schema(description = "The age of the user")
+    private Integer age ;
 }
