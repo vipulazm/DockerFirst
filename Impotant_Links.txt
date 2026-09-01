@@ -2,20 +2,21 @@ Docker Links
 =================
 		
 https://www.geeksforgeeks.org/devops/docker-interview-questions/ 
-
 https://www.youtube.com/watch?v=kOryO5I_w14&t=1221s  (you tube tutorial link)
 	
-
 React.JS Tutorial
 ==================
 
+https://www.geeksforgeeks.org/reactjs/react/
 
 
 AWS Links
 =============
-
 https://www.youtube.com/watch?v=V7x8qay7ePA&list=PL-bgVzzRdaPhE4h7u9OWe0cf7P6H-MpeM
 
-
+Hibernate
+=========
+https://medium.com/@pratik.941/mastering-hibernate-key-interview-questions-3bcc5f2b7775
+https://www.interviewbit.com/hibernate-interview-questions/
 
 	

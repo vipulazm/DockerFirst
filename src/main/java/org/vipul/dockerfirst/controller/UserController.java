@@ -26,4 +26,11 @@ public class UserController {
     public List<UserEntity> getUser(){
         return userService.getAllUser();
     }
+
+    @DeleteMapping("/deleteUser/{name}")
+    public void deleteUserByName(@PathVariable(name = "name", required = true) String name){
+        userService.deleteByUserName(name);
+    }
+
+
 }

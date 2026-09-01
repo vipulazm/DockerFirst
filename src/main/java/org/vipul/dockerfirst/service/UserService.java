@@ -1,6 +1,7 @@
 package org.vipul.dockerfirst.service;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.vipul.dockerfirst.dto.UserDto;
@@ -18,6 +19,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    @Transactional
     public void saveUser(UserDto userDto){
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(userDto, userEntity);
@@ -26,5 +28,10 @@ public class UserService {
 
     public List<UserEntity> getAllUser(){
          return userRepository.findAll();
+    }
+
+    @Transactional
+    public void deleteByUserName(String name){
+        userRepository.deleteByName(name);
     }
 }
